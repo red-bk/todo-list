@@ -9,11 +9,11 @@ function Button({ type, onClick }: ButtonProps) {
       onClick={onClick}
     >
       {type === "done" ? (
-        <span className="font-bold">Completed</span>
+        <span className="font-bold">Complete</span>
       ) : type === "edit" ? (
         <span className="font-bold">edit</span>
       ) : (
-        <span className="font-bold">deleted</span>
+        <span className="font-bold">delete</span>
       )}
     </button>
   );

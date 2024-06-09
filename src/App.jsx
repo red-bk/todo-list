@@ -4,10 +4,10 @@ import ThemeSwitcher from "./components/theme-switcher";
 
 function App() {
   return (
-    <div className="dark:bg-slate-800 flex flex-col items-center">
-    <ThemeSwitcher/>
-    <TodoApp/>
-    </div>
+    <div className="App dark:bg-slate-800 flex flex-col items-center h-full">
+        <ThemeSwitcher/>
+        <TodoApp/>
+    </div> 
   );
 }
 

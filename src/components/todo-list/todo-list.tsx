@@ -67,7 +67,6 @@ function TodoList() {
   };
 
   return (
-    <div className="App flex  bg-grey-500 justify-center items-center h-full w-full ">
       <div className="bg-blue-200 rounded-xl w-1/2 h-[600px] flex justify-center overflow-scroll dark:bg-[#7E8EF1]">
         <div className="flex flex-col flex-1 p-5 items-top gap-5">
           {/* search todo by name will filter non-completed and completed todos*/}
@@ -91,7 +90,7 @@ function TodoList() {
           {/* add todo */}
           <TodoForm onAdd={handleAdd} />
           {/* non-completed todo items */}
-          <h2 className="font-bold">non-completed tasks</h2>
+          <h2 className="font-bold">non-completed todo</h2>
           {/* filter  the todos list with the matching search value and non-completed todo */}
           {todos
             .filter((todo) => !todo.done && todo.task.includes(searchValue))
@@ -109,7 +108,7 @@ function TodoList() {
           <div className="w-full border border-blue-300"></div>
 
           {/* completed  todos items */}
-          <h2 className="font-bold">completed tasks</h2>
+          <h2 className="font-bold">completed todo</h2>
           {/* filter  the todos list with the matching search value and completed todo */}
           {todos
             .filter((todo) => todo.done && todo.task.includes(searchValue))
@@ -118,7 +117,6 @@ function TodoList() {
             ))}
         </div>
       </div>
-    </div>
   );
 }
 
