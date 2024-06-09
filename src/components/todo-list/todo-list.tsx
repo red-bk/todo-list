@@ -78,14 +78,6 @@ function TodoList() {
               placeholder="search"
               onChange={(e) => searchTodo(e)}
             />
-            <button
-              type="button"
-              className="dark:bg-[#615EFC] dark:border-[#615EFC] border-2 rounded-r-md border-blue-500 text-white bg-blue-500 w-11 h-full text-3xl flex items-center justify-center"
-            >
-              <span className="font-bold hover:scale-125 transition">
-                &#x2715;
-              </span>
-            </button>
           </div>
           {/* add todo */}
           <TodoForm onAdd={handleAdd} />
