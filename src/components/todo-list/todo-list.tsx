@@ -70,12 +70,13 @@ function TodoList() {
     <div className="App flex  bg-grey-500 justify-center items-center h-full w-full ">
       <div className="bg-blue-200 rounded-xl w-1/2 h-[600px] flex justify-center overflow-scroll dark:bg-[#7E8EF1]">
         <div className="flex flex-col flex-1 p-5 items-top gap-5">
-          {/* search todos in non-completed and non-completed */}
+          {/* search todo by name will filter non-completed and completed todos*/}
+          <p className="text-red-500">search todo by name will filter non-completed and completed todos</p>
           <div className="flex items-center">
             <input
               className="flex-1 border-2 rounded-l-md border-blue-500 p-3 "
               type="text"
-              placeholder="search"
+              placeholder="search todo by name"
               onChange={(e) => searchTodo(e)}
             />
             <button
