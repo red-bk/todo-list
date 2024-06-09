@@ -28,14 +28,14 @@ function TodoItem({ todo, done, onComplete, onRemove, onEdit }: TodoItemProps) {
       }
     >
       <span className="flex-1">{todo.task}</span>
-      {!done && (
+      { todo.done == false && (
         <div className="flex gap-2 transition-opacity">
           <Button type="done" onClick={completeTask} />
           <Button onClick={removeTask} />
           <Button type="edit" onClick={editTask} />
         </div>
       )}
-      {done && (
+      { todo.done == true && (
         <div className="dark:bg-[#615EFC] dark:text-white  bg-sky-100 text-center  text-blue-500 flex justify-center items-center p-1">
           <span className="text-blue-500 font-bold dark:text-white">Completed</span>
         </div>

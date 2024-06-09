@@ -67,15 +67,15 @@ function TodoList() {
   };
 
   return (
+    <div className="App flex  bg-grey-500 justify-center items-center h-full w-full ">
       <div className="bg-blue-200 rounded-xl w-1/2 h-[600px] flex justify-center overflow-scroll dark:bg-[#7E8EF1]">
         <div className="flex flex-col flex-1 p-5 items-top gap-5">
-          {/* search todo by name will filter non-completed and completed todos*/}
-          <p className="text-red-500">search todo by name will filter non-completed and completed todos</p>
+          {/* search todos in non-completed and non-completed */}
           <div className="flex items-center">
             <input
               className="flex-1 border-2 rounded-l-md border-blue-500 p-3 "
               type="text"
-              placeholder="search todo by name"
+              placeholder="search"
               onChange={(e) => searchTodo(e)}
             />
             <button
@@ -89,11 +89,9 @@ function TodoList() {
           </div>
           {/* add todo */}
           <TodoForm onAdd={handleAdd} />
-          {/* non-completed todo items */}
-          <h2 className="font-bold">non-completed todo</h2>
-          {/* filter  the todos list with the matching search value and non-completed todo */}
+          {/* filter the todos list with the matching search value */}
           {todos
-            .filter((todo) => !todo.done && todo.task.includes(searchValue))
+            .filter((todo) =>  todo.task.includes(searchValue))
             .map((todo, index) => (
               <TodoItem
                 key={`task-${index}`}
@@ -103,20 +101,9 @@ function TodoList() {
                 onEdit={handleEdit}
               />
             ))}
-
-          {/* line speraot */}
-          <div className="w-full border border-blue-300"></div>
-
-          {/* completed  todos items */}
-          <h2 className="font-bold">completed todo</h2>
-          {/* filter  the todos list with the matching search value and completed todo */}
-          {todos
-            .filter((todo) => todo.done && todo.task.includes(searchValue))
-            .map((todo, index) => (
-              <TodoItem key={`task-${index}`} todo={todo} done />
-            ))}
         </div>
       </div>
+    </div>
   );
 }
 
