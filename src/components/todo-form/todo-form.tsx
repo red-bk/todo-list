@@ -1,5 +1,7 @@
+import React from "react";
 import { useState } from "react";
-export default function ({ onAdd }) {
+
+function TodoForm({ onAdd }) {
   const [task, setTask] = useState("");
 
   const handleAdd = () => {
@@ -17,19 +19,18 @@ export default function ({ onAdd }) {
         placeholder="Add a task here..."
         value={task}
         onChange={(e) => setTask(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") handleAdd();
-        }}
       />
       <button
         type="button"
-        className="border-2 rounded-r-md border-blue-500 text-white bg-blue-500 w-11 h-full text-3xl flex items-center justify-center"
+        className="dark:bg-[#615EFC] dark:border-[#615EFC] border-2 rounded-r-md border-blue-500 text-white bg-blue-500 w-11 h-full text-3xl flex items-center justify-center"
         onClick={handleAdd}
       >
-        <span className="material-symbols-outlined font-bold hover:scale-125 transition">
-          add
+        <span className=" font-bold hover:scale-125 transition">
+        &#10010;
         </span>
       </button>
     </div>
   );
 }
+
+export default TodoForm;
